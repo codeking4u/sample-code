@@ -1,4 +1,6 @@
 # sample-code
+```
+/* Function to make wardrobe section droppable */
 function main_section_droppable_init() {
    $(document).find(".dropable-main-section").droppable({
          over: function (event, ui) {
@@ -30,20 +32,20 @@ function main_section_droppable_init() {
                window.set_x = $(document).find('.ui-draggable-dragging').eq(0).offset().left - $("#stack-holder").offset().left;
                $('.w-space').hide();
 
-               if (!revertornot) {
+               if (!revert_section_flag) {
+                  /* A check to decide whether to add the section to wardrobe or not */
                   make_subsection_droppable();
                   if (('ontouchstart' in document.documentElement)) {
                      $('.dropable-main-section #' + new_section_id).find('.sectn-buttn.sectn-hover-btn').show();
                      $('.dropable-main-section #' + new_section_id).find('.sectn-buttn.sectn-hover-btn').delay(3000).hide(0);
                   }
 
-                  dropable_section(new_section_id);
-                  mellomvegg_preview();
-                  getStepTotals();;
+                  dropable_section(new_section_id);  /* make the dropped section as droppable */
+                  mellomvegg_preview();   /* add extra wall as per logic*/
+                  getStepTotals();;  /* generate cost*/
 
                }
-
-
             }
          });
    }
+```
